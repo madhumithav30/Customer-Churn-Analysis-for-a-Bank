@@ -6,7 +6,8 @@ services:
     container_name: bank_data_pipeline
     environment:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
-      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_TIMEOUT=300
     volumes:
       - ./dags:/opt/airflow/dags
       - ./jobs:/opt/airflow/jobs
