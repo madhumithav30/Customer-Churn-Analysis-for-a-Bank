@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  airflow-spark:
+    build: .
+    image: custom-airflow-spark:latest
+    container_name: bank_data_pipeline
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./jobs:/opt/airflow/jobs
+      - ./data:/opt/airflow/data
+    ports:
+      - "8080:8080"
+    command: standalone
