@@ -24,11 +24,15 @@ The pipeline follows the **Medallion Architecture** to ensure high data quality 
 
 ## Step-by-Step Deployment Guide
 
-### 1. Environment Setup
+### 1. Dataset
+This project uses the **Bank Customer Churn Dataset** from Kaggle.
+- **Source:** [Kaggle - Bank Customer Churn Dataset](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset)
+- **Instructions:** Download the `Bank Customer Churn Prediction.csv`, rename it to `churn_data.csv`, and place it in the `/data` directory before running the pipeline.
+### 2. Environment Setup
 - Clone this repository into your local environment or **GitHub Codespaces**.
 - Ensure the raw dataset (`churn_data.csv`) is placed inside the `/data` folder.
 
-### 2. Launch Infrastructure 
+### 3. Launch Infrastructure 
 In the terminal, run the following command to build and launch the containerized Spark/Airflow environment:
 ```bash
 docker-compose up --build -d
@@ -38,18 +42,18 @@ Note: The build process installs Java 17 and PySpark. Please allow 3-5 minutes f
 
 
 
-### 3. Access the Airflow UI (Port 8080)
+### 4. Access the Airflow UI (Port 8080)
 Navigate to the Ports tab in your IDE (e.g., VS Code or Codespaces).
 Ensure Port 8080 visibility is set to Public.
 Open the local address link in your browser.
-###  4. Authentication
+###  5. Authentication
 To retrieve the randomly generated administrator password, run:
 code
 Bash
 docker exec bank_data_pipeline cat /opt/airflow/standalone_admin_password.txt
 Username: admin
 Password: [The output from the command above]
-###  5. Execute the Pipeline
+###  6. Execute the Pipeline
 Locate the DAG: bank_retention_pipeline.
 Unpause the DAG (Toggle the switch to 'On').
 Click the Trigger (Play button) to execute the Medallion Spark jobs.
