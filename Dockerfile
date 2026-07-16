@@ -13,3 +13,4 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
 USER airflow
 RUN pip install --no-cache-dir pyspark
+RUN pip install --no-cache-dir pyspark pandas seaborn matplotlib
