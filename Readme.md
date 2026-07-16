@@ -102,6 +102,12 @@ The following is a verified sample of the Gold Layer output. It demonstrates the
 | 6dab68c7d5c3... | High Net Worth | 0.0 | MONITOR |
 | 82532124c392... | **High Net Worth** | **0.8** | **URGENT** |
 
+## Analytical Insights (Gold Layer Visualization)
+To validate the business value of the **Gold Layer**, I developed a visualization script that analyzes the distribution of risk across wealth segments.
+
+![Retention Analytics](images/retention_analytics.png)
+
+**Key Insight:** The pipeline successfully isolated over 300 **High Net Worth** individuals categorized as **URGENT**. This allows the bank to move from broad marketing to high-precision, high-value retention outreach.
 **Key Feature Logic:**
 - **Risk Score 0.8 (URGENT):** Flags customers with low product density and zero activity.
 - **Risk Score 0.0 (MONITOR):** Identifies highly "sticky" customers with multiple product holdings and active status.
